@@ -1,7 +1,7 @@
 #!/bin/bash
 aws cloudformation deploy \
 --region us-east-1 \
---stack-name codepipeline-lambda-prereq \
---template-file ./aws-codepipeline-prereq.yml \
+--stack-name jhonmora-codepipeline-lambda-prereq \
+--template-file ./jmaws-codepipeline-prereq.yml \
 --capabilities CAPABILITY_IAM \
 --capabilities CAPABILITY_NAMED_IAM

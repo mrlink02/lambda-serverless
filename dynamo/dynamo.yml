@@ -6,7 +6,7 @@ Parameters:
         Type: String
       
 Resources:
-  DynamoLab:
+  DynamoLabjm:
     Type: AWS::DynamoDB::Table
     Properties:
       TableName: !Ref DynamoName
@@ -21,10 +21,10 @@ Resources:
         SSEEnabled: true
 Outputs:
   DynamoName:
-      Value: !Ref DynamoLab
+      Value: !Ref DynamoLabjm
       Export:
-        Name: DynamoLab
+        Name: jmlablambda
   DynamoNameArn:
-      Value: !GetAtt DynamoLab.Arn
+      Value: !GetAtt DynamoLabjm.Arn
       Export:
-        Name: DynamoLabArn
+        Name: DynamoLabjmArn
