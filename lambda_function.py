@@ -12,12 +12,12 @@ class DynamoAccessor:
         dynamo_db = boto3.resource('dynamodb')
         self.table = dynamo_db.Table(dynamo_table)
 
-    def get_data_from_dynamo(self, cc):
-        response = self.table.query(KeyConditionExpression=Key('CC').eq(cc))
+    def get_data_from_dynamo(self, CC):
+        response = self.table.query(KeyConditionExpression=Key('CC').eq(CC))
         return response["Items"][0] if any(response["Items"]) else None
 
 def lambda_handler(event, context):
     dynamo_backend = DynamoAccessor(DYNAMO_BD)
-    db_element = dynamo_backend.get_data_from_dynamo(event['cc'])
+    db_element = dynamo_backend.get_data_from_dynamo(event['CC'])
     return db_element
 
